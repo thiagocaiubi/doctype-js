@@ -1,0 +1,8 @@
+* {
+	font-family: monospace;
+	letter-spacing: .1em;
+	margin: 0px;
+	padding: 0px;
+}
+.bold { font-weight: bold; }
+.center { text-align: center; }

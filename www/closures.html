@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DocType</title>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script charset="iso-8859-1" type="text/javascript">
+function main(links) { 
+	for (var i=0; i<links.length; i++) { 
+		links[i].onclick = (function(i){ 
+			return function(){
+				alert(i+1);
+			}
+		})(i); 
+	}    
+}; 
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	 <div>
+	 	 <button onclick="main(document.getElementsByTagName('a'));">outer</button>
+	 </div>
+	<ul>
+		<li>
+			<a href="#">link 1</a>
+		</li>
+		<li>
+			<a href="#">link 2</a>
+		</li>
+		<li>
+			<a href="#">link 3</a>
+		</li>
+	</ul>
+</body>
+</html>

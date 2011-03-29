@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DocType</title>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/doctype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/js/loader.js"></script>
+<script charset="iso-8859-1" type="text/javascript">
+document.observe("dom:loaded", function(){
+	new Loader({
+		requireJS: [UI.Tabs],
+		onComplete: function(){
+			var tabs = new Tabs("tabs", {
+				"Gerencial": {
+					requestContent: {
+						url: "/PrototypeScriptaculousSpike/TabsServlet",
+						parameters: { q: "Gerencial" } 
+					}
+				},
+				"Crédito": {
+					content: "<h3>Crédito</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam dignissim justo. Fusce convallis elit eget enim." + 
+					"In posuere eleifend felis. Fusce faucibus augue eget justo. Nulla facilisi. Donec mattis. Nullam elit neque, euismod a, " +
+					"luctus a, lobortis non, mauris. Nam nibh ante, rhoncus nec, feugiat sed, venenatis sed, ipsum. Aliquam porta nunc in dolor. " +
+					"Donec convallis. Nulla accumsan nunc id nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia " +
+					"Curae; Nam ut magna nec purus laoreet facilisis.</p>" +
+					"<p>Morbi turpis metus, tristique eget, vestibulum a, gravida a, nulla. Nam hendrerit fermentum turpis. Donec iaculis enim ac " + 
+					"erat. Nam ut velit. Cras non magna id ligula bibendum luctus. Nulla dictum sollicitudin nulla. Etiam eu turpis. Fusce arcu " +
+					"dolor, sollicitudin sed, ornare nec, dictum volutpat, diam. Aliquam tristique. Nam eget turpis quis urna sollicitudin placerat." + 
+					"Proin tortor arcu, venenatis quis, varius quis, consectetuer et, erat. Maecenas erat sem, eleifend et, imperdiet vel, " +
+					"dignissim sed, eros.</p>"
+				},
+				"CRM": {
+					content: "<h3>CRM</h3>"
+				},
+				"Estrutura": {
+					content: "<h3>Estrutura</h3>"
+				},
+				"Operação": {
+					content: "<h3>Operação</h3>"
+				}
+			});
+			tabs.add({ "Yeah" : { content: "Keep it simple!!!" } });		
+		}
+	});
+});
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div id="tabs"></div>
+</body>
+</html>

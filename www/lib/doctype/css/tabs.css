@@ -1,0 +1,39 @@
+.tabs {
+	margin: 20px;
+}
+.tabs ul {
+	border-bottom: 5px solid black; 
+	margin: 0px 0px;
+	padding: 0px 0px 5px 0px;
+}
+.tabs ul li {
+	display: inline;
+	list-style-type: none;
+	margin-left: 5px;
+	padding: 0px;
+}
+.tabs ul li a {
+	border-top: 3px solid black;
+	font-size: 130%;
+	padding: 5px;
+	text-decoration: none;
+}
+.tabs ul li a:hover {
+	border-top-color: orange;
+}
+.tabs > div {
+	background-color: #333;
+	border: 5px solid black;
+	border-top-width: 0px;
+	padding: 10px 0px 10px 5px;
+	color: white;
+}
+.inactiveTab, .inactiveTab:active, .inactiveTab:hover, .inactiveTab:visited  {
+	background-color: black;
+	color: orange;
+}
+.activeTab, .activeTab:active, .activeTab:hover, .activeTab:visited  {
+	background-color: orange; 
+	border-top-color: orange;
+	color: black;
+}

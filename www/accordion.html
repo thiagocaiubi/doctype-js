@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Accordion</title>
+<script type="text/javascript" src="./js/lib/prototype.js"></script>
+<script type="text/javascript" src="/doctype/lib/doctype/js/timer.js"></script>
+<script type="text/javascript">
+var Accordion = Class.create({
+	initialize: function(element){
+		this.element = $(element).addClassName("accordion");
+		this._hideContents();
+		thiz = this;
+		this.element.select("ul li:nth-child(2n+1)").each(function(li){
+			li.observe("click", thiz._onClick.bindAsEventListener(this, li));
+		});
+	},
+	_hideContents: function(){
+		this.element.select("ul li:nth-child(2n)").invoke("hide");
+	},
+	_onClick: function(event, li){
+		thiz._hideContents();
+		li.next().toggle();
+	}
+});
+
+document.observe("dom:loaded", function(){
+	var timer = new Timer();
+	new Accordion("accordion");
+	$("debug").update(timer.end());
+});
+</script>
+<style type="text/css">
+.accordion{
+	background-color: #b5d5ff;
+	border: 1px solid #036;
+}
+.accordion ul{
+	list-style-type: none;
+	margin: 0px; 
+	padding: 0px; 
+}
+.accordion ul li{
+	border: 1px solid #036;
+	padding: 5px; 
+}
+</style>
+</head>
+<body>
+	<p>
+		<span onclick="javascript: back();" style="cursor: pointer; text-decoration: underline;">Home</span>
+	</p>
+	<h1>
+		Accordion
+	</h1>
+	<div id="accordion">
+		<ul>
+			<li>
+				Coord 1
+			</li>
+			<li>
+				<ul>
+					<li>Coor 1.1</li>
+					<li>Coor 1.2</li>
+					<li>Coor 1.3</li>
+				</ul>
+			</li>
+			<li>
+				Coord 2
+			</li>
+			<li>
+				Content 2
+			</li>
+			<li>
+				Coord 3
+			</li>
+			<li>
+				Content 3
+			</li>
+		</ul>
+	</div>
+	<div id="debug"></div>
+</body>
+</html>

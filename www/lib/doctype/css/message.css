@@ -1,0 +1,59 @@
+.message{
+	background-position: 10px center !important;
+	background-repeat: no-repeat !important;
+	height: 100px;
+	left: 50%;
+	margin-left: -150px;
+	position: absolute;
+	top: 10px;
+	width: 300px;
+	z-index: 1000;
+}
+.message > .icon{
+	background: url("/doctype/lib/doctype/img/messages.png");
+	margin: 15px;
+	padding: 0px;
+	position: absolute;
+	height: 48px;
+	width: 48px;
+} 
+.information{
+	background-color: #839cef;
+	border: 1px solid blue;
+}
+.information > .icon{
+	background-position: 48px 0px;
+}
+.warning{
+	background-color: #fef3a9;
+	border: 1px solid yellow;
+}
+.warning > .icon{
+	background-position: 0px 48px;
+}
+.error{
+	background-color: #f09999;
+	border: 1px solid red;
+}
+.error > .icon{
+	background-position: 0px 0px;
+}
+.question{
+	background-color: #839cef;
+	border: 1px solid blue;
+}
+.question > .icon{
+	background-position: 48px 48px;
+}
+.message div{
+	margin-left: 80px;
+	padding-top: 30px;
+}
+.message div.action{
+	padding-right: 20px;
+	text-align: right;
+}
+.message div.action button{
+	margin-left: 20px;
+	padding: 3px 10px 3px 10px;
+}

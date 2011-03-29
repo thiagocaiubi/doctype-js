@@ -1,0 +1,29 @@
+.grid {
+	border: 1px solid black;
+	border-spacing: 0px;
+}
+.grid caption, .grid thead tr th, .grid tbody tr td, .grid tfoot tr td {
+	padding: 5px;
+}
+.grid caption {
+	background-color: black;
+	color: white;
+}
+.grid thead, .grid tfoot {
+	background-color: gray;
+	color: white;
+}
+.grid thead tr th a {
+	color: black;
+}
+.grid tbody tr:hover {
+	background-color: #aaa;
+}
+.grid tfoot tr td {
+	text-align: center;
+}
+.grid > td {
+	margin: 0px;
+}
+.odd { background-color: #fff; }
+.even { background-color: #ccc; }

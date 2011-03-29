@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DocType</title>
+<link charset="iso-8859-1" href="/doctype/css/doctype.css" rel="stylesheet" type="text/css"/>
+<link charset="iso-8859-1" href="/doctype/lib/doctype/css/ddbg.css" rel="stylesheet" type="text/css"/>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/scriptaculous.js?load=effects,dragdrop"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/js/ddbg.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/js/wheel.js"></script>
+<script charset="iso-8859-1" type="text/javascript">
+var counterSite = 0;
+
+function handleSite(e) {
+	counterSite += Event.wheel(e);
+	$("debug").update(counterSite +'#'+ Event.wheel(e) + ": " + (Event.wheel(e) < 0 ? 'down' : 'up' ));
+}
+
+document.observe("dom:loaded", function(){
+	var ddbg = new DDBG({});
+	ddbg.container.observe("mouse:wheel", handleSite);
+	ddbg.container.observe("DOMMouseScroll", handleSite);
+});
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="debug"></div>
+</body>
+</html>

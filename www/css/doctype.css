@@ -1,0 +1,30 @@
+* {
+	font-family: monospace;
+	letter-spacing: .1em;
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: gray;
+}
+a, a:hover, a:active, a:visited {
+	color: orange;
+}
+#page, #header, #footer {
+	width: 100%;
+}
+#page {}
+#header, #footer {
+	background-color: black;
+	color: orange;
+	font-size: 300%;
+	height: 50px;
+}
+#content {
+}
+#footer {
+	margin-top: -50px;
+	position: absolute;
+	top: 100%;
+}
+.right { text-align: right; }

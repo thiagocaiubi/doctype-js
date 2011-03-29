@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DocType - Grid</title>
+<script type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script type="text/javascript" src="/doctype/lib/doctype/doctype.js"></script>
+<script type="text/javascript" src="/doctype/lib/doctype/js/grid.js"></script>
+<script type="text/javascript" src="/doctype/lib/doctype/js/parser.js"></script>
+<script type="text/javascript">
+document.observe("dom:loaded", function(){
+	new Grid("grid", {sortable:true});
+});
+</script>
+<style type="text/css">
+.grid {
+	border: 1px solid black;
+	border-spacing: 0px;
+}
+.grid caption, .grid thead tr th, .grid tbody tr td, .grid tfoot tr td {
+	padding: 5px;
+}
+.grid caption {
+	background-color: black;
+	color: white;
+}
+.grid thead, .grid tfoot {
+	background-color: gray;
+	color: white;
+}
+.grid thead tr th a {
+	color: black;
+}
+.grid tbody tr:hover {
+	background-color: #aaa;
+}
+.grid tbody tr td {
+	border-bottom: 10px solid red;
+}
+.grid tfoot tr td {
+	text-align: center;
+}
+.grid > td {
+	margin: 0px;
+}
+.odd { background-color: #fff; }
+.even { background-color: #ccc; }
+</style>
+<style type="text/css" media="screen"></style>
+</head>
+<body>
+	<h1>Grid</h1>
+	<table id="grid" summary="Grid example" class="grid">
+		<caption>Grid</caption>
+		<thead>
+			<tr>
+				<th>Nome Teste</th>
+				<th>Sexo</th>
+				<th>Data de nascimento</th>
+				<th>Sal&aacute;rio</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Grazi Massafera</td>
+				<td>Feminino</td>
+				<td class="center">23/04/1981</td>
+				<td class="center">R$ 9.000,00</td>
+			</tr>
+			<tr>
+				<td>Alinne Moraes</td>
+				<td>Feminino</td>
+				<td class="center">23/11/1980</td>
+				<td class="center">R$ 14.000,00</td>
+			</tr>
+			<tr>
+				<td>Thiago Caiubi</td>
+				<td>Masculino</td>
+				<td class="center">23/04/1982</td>
+				<td class="center">R$ 23.000,00</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4">Footer</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

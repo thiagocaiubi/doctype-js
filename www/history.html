@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DocType</title>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/js/history.js"></script>
+<script charset="iso-8859-1" type="text/javascript">
+document.observe("dom:loaded", function(){
+	$("btn").observe("click", bio);
+	$("debug").update("thiago caiubi...");
+});
+
+function bio(){
+	new Ajax.Updater("bio", "home.html");
+	$("btn").stopObserving().observe("click", timao);
+}
+function timao(){
+	new Ajax.Updater("bio", "timao.html");
+	$("btn").stopObserving().observe("click", bio);
+}
+
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div>
+		<button id="btn">Request!!!</button>
+	</div>
+	<div id="bio"></div>
+	<div id="debug"></div>
+</body>
+</html>

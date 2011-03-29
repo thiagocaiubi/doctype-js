@@ -1,0 +1,9 @@
+.input { border: 1px double gray; }
+.input[type=text]:hover {
+	border-color: #67a7e3; 
+}
+.input[type=text]:focus {
+	background-color: #fdfd91; 
+	border-color: #67a7e3; 
+}
+.inputError { border-color: red; }

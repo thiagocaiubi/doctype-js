@@ -1,0 +1,17 @@
+.window{
+	background-color: #999;
+	border: 1px solid;
+	position: absolute;
+}
+.window .title{
+	background-color: black;
+	color: yellow;
+	font-size: 100%;
+	letter-spacing: .1em;
+	margin-top: 0px;
+	padding: 5px;
+}
+.window .title .close{
+	float: right;
+	margin-top: -20px;
+}

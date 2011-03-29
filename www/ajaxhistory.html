@@ -1,0 +1,57 @@
+ <?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DocType</title>
+<link charset="iso-8859-1" href="/doctype/css/doctype.css" rel="stylesheet" type="text/css"/>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/doctype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/js/ajaxhistory.js"></script>
+<script type="text/javascript">
+document.observe("dom:loaded", function(){
+	var initialBody = $$("body").first().childElements();
+	new Ajax.Updater("content1", "timao.html", {
+		//byPassRegisters: true	
+	});
+	var initialElements = $$("body").first().childElements();
+	$("back").observe("click", function(){
+		initialElements.each(function(element){
+			$$("body").first().insert(element);
+		});
+	});
+});
+
+function updateMe(){
+	new Ajax.Updater("content2", "raciona.html", {
+		//byPassRegisters: true	
+	});
+}
+</script>
+<style type="text/css" media="screen">
+#content1, #content2{
+	float: left;
+	width: 250px;
+}
+#nav{
+	background: yellow;
+	padding: 10px 0px;
+}
+#nav ul li{
+	display: inline;
+}
+</style>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li id="back">Back</li>
+			<li id="forward">Forward</li>
+		</ul>
+	</div>
+	<div id="content1"></div>
+	<div id="content2">
+		<button onclick="javascript: updateMe();">Update me</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DocType - Number Field</title>
+<script type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script type="text/javascript" src="/doctype/lib/doctype/doctype.js"></script>
+<script type="text/javascript" src="/doctype/lib/doctype/js/input.js"></script>
+<script type="text/javascript">
+document.observe("dom:loaded", function(){
+	new Input("teste", {
+		handlers: {
+			onClick: function(){
+				window.alert("caiubasss");
+			}
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div>
+	<input id="teste" type="text" value="Teste"/>
+</div>
+</body>
+</html>

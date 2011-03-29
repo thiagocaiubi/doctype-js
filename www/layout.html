@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DocType</title>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/js/layout.js"></script>
+<script charset="iso-8859-1" type="text/javascript">
+document.observe("dom:loaded", function(){
+});
+</script>
+<style type="text/css">
+#loading{
+	height: 38px;
+	left: 50%;
+	margin-left: -16px;
+	position: absolute;
+	top: 10px;
+	width: 32px;
+}
+</style>
+</head>
+<body>
+	<div id="loading" style="display: none;">
+		<img src="./img/loading.gif" alt="Loading..." />
+	</div>
+	<div id="page">
+		<div id="menu">
+			<ul>
+				<li onclick="render('container', 'caiubi.html', {indicator: 'loading'});">Content 1</li>
+				<li onclick="render('container', 'Sleep', {indicator: 'loading'});">Content 2</li>
+			</ul>
+		</div>
+		<div id="container"></div>
+	</div>
+</body>
+</html>

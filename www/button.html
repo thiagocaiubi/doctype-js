@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DocType</title>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/js/lib/prototype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/doctype.js"></script>
+<script charset="iso-8859-1" type="text/javascript" src="/doctype/lib/doctype/js/loader.js"></script>
+<script charset="iso-8859-1" type="text/javascript">
+document.observe("dom:loaded", function(){
+	new Loader({
+		requireJS: [UI.Button],
+		onComplete: function(){
+			new Button("button", {
+				label: "Butão",
+				observers: {
+					click: function(){window.alert("thiago caiubi");},
+					mouseover: function(){$("debug").insert("over&nbsp;");},
+					mouseout: function(){$("debug").insert("out&nbsp;");},
+				},
+				attributes: {
+					title: "Butão"
+				}
+			});
+		}
+	});
+});
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<p>
+		<button id="button"></button>
+	</p>
+	<div id="debug"></div>
+</body>
+</html>

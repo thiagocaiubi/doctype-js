@@ -1,0 +1,33 @@
+.calendar {
+	background-color: #acf;
+	border: 1px solid #369;
+	border-spacing: 0px;
+	font-size: 80%;
+	width: 200px;
+}
+.calendar .monthAndYear {
+	background-color: #6ac;
+	text-align: center;
+}
+.calendar .month {
+	width: 10px;
+}
+.calendar a {
+	text-decoration: none;
+}
+.calendar .outsideMonth {
+	color: gray;
+}
+.calendar .insideMonth:hover {
+	background-color: #6ac;
+}
+.calendar caption, .calendar .today, .calendar .today a, .calendar tfoot {
+	background-color: #369;
+	color: #fff;
+}
+.calendar button, .calendar select, .calendar input {
+	font-size: 80%;
+	margin: 5px 0px;
+}
+.calendar tr td:hover {
+}
